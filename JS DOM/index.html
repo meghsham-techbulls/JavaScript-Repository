@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color: azure;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <script>
+
+        function addListItem (itemName) {
+            let list = document.querySelector("#bikeList");
+            let newItem = document.createElement("li");
+            console.log(itemName);
+            newItem.innerText = itemName;
+            list.appendChild(newItem);
+        }
+
+        function editListItem  (elementIndex,elementValue){
+            const nthElement = document.querySelector(`li:nth-child(${elementIndex})`);
+           nthElement.innerText=elementValue;
+        }
+
+        function deleteListItem (elementIndex){
+            document.querySelector(`li:nth-child(${elementIndex})`).remove();
+        }
+
+    </script>
+</head>
+<body>
+    <div class="listContainer">
+        <ol id="bikeList">  </ol>
+    </div>
+</body>
+</html>
+<!-- 
+addListItem('One');
+addListItem('Two');
+addListItem('Three');
+addListItem('Four');
+addListItem('Five');
+ -->
